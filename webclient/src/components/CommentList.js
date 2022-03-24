@@ -5,10 +5,15 @@ const CommentList = ({ postid }) => {
   const [comments, setComments] = useState([]);
 
   const fetchComments = async () => {
-    const response = await axios.get(
-      `http://localhost:5042/api/posts/${postid}/comments`
-    );
-    setComments(response.data.data);
+    try {
+      const response = await axios.get(
+        `http://localhost:5042/api/posts/${postid}/comments`
+      );
+      setComments(response.data.data);
+    } catch (error) {
+      alert(`OOPS Something Went Wrong ${error.message}`);
+      console.error(error);
+    }
   };
 
   useEffect(() => {

@@ -7,8 +7,13 @@ const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    const response = await axios.get("http://localhost:5040/api/posts");
-    setPosts(response.data.data);
+    try {
+      const response = await axios.get("http://localhost:5040/api/posts");
+      setPosts(response.data.data);
+    } catch (error) {
+      alert(`OOPS Something Went Wrong ${error.message}`);
+      console.error(error);
+    }
   };
 
   useEffect(() => {

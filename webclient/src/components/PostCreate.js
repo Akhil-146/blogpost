@@ -6,11 +6,16 @@ const PostCreate = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post("http://localhost:5040/api/posts", {
-      title,
-    });
-    alert(response.data.message);
-    setTitle("");
+    try {
+      const response = await axios.post("http://localhost:5040/api/posts", {
+        title,
+      });
+      alert(response.data.message);
+      setTitle("");
+    } catch (error) {
+      alert(`OOPS Something Went Wrong ${error.message}`);
+      console.error(error);
+    }
   };
 
   return (
