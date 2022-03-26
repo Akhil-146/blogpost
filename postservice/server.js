@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.json({ status: "200", message: "Post Service is up and running" });
 });
 
-app.use("/api/posts", posts);
+app.use("/api", posts);
 
 app.listen("5040", () => {
   console.log("Post Service is Listening on Port 5040");

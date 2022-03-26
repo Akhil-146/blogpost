@@ -1,0 +1,17 @@
+{
+  "name": "moderationservice",
+  "version": "1.0.0",
+  "description": "This is a Moderation Service Application which handles comments moderating",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "type": "module",
+  "author": "Akhil",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  }
+}
