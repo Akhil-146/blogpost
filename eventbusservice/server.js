@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.json({ status: "200", message: "Event Bus Service is up and running" });
 });
 
-app.use("/api/events", events);
+app.use("/api", events);
 
 app.listen("5046", () => {
   console.log("Event Bus Service is Listening on Port 5046");

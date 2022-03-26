@@ -4,9 +4,7 @@ const router = express.Router();
 
 const posts = [];
 
-router.post("/events", (req, res) => {
-  const { type, data } = req.body;
-
+export function handleEvents({ type, data }) {
   if (type === "PostCreated") {
     posts.push({ id: data.id, title: data.title, comments: [] });
   }
@@ -33,8 +31,14 @@ router.post("/events", (req, res) => {
       }
     });
   }
+}
 
-  res.json({ status: "200", message: `Event Processed with title ${type}` });
+router.post("/events", (req, res) => {
+  handleEvents(req.body);
+  res.json({
+    status: "200",
+    message: `Event Processed with title ${req.body.type}`,
+  });
 });
 
 router.get("/posts", (req, res) => {
