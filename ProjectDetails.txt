@@ -1,0 +1,8 @@
+Blog Post Details :
+
+	Post Service : 5040 - Docker akhil14/blogpost/postservice
+	Comment Service : 5042 - Docker akhil14/blogpost/commentservice
+	Query Service : 5044 - Docker akhil14/blogpost/queryservice
+	EventBus Service : 5046 - Docker akhil14/blogpost/eventbusservice
+	Moderation Service : 5048 - - Docker akhil14/blogpost/moderationservice
+	Web Client : 3000 - Docker akhil14/blogpost/webclient
